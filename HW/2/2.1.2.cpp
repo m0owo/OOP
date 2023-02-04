@@ -15,7 +15,7 @@ vector<string> unstylize(vector<string> &words) {
 }
 
 void print_vec(vector<string> vec) {
-    for (int i = 0; i < vec.size(); ++i) {
+    for (int i = vec.size() - 1; i >= 0; --i) {
         cout << vec[i] << " ";
     }
     cout << endl;
