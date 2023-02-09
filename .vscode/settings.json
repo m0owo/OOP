@@ -60,6 +60,8 @@
         "vector": "cpp",
         "algorithm": "cpp",
         "concepts": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "iomanip": "cpp",
+        "numeric": "cpp"
     }
 }
