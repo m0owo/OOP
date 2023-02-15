@@ -3,25 +3,18 @@
 #include <sstream>
 #include <vector>
 #include <map>
+#include <algorithm>
 
 using namespace std;
 
-float sort_erase(vector<string> scores) {
-    float highest;
+float highest(vector<string> scores) {
+    float highest = stof(scores[0]);
     for (string score: scores) {
         if (stof(score) > highest) {
             highest = stof(score);
         }
     }
     return highest;
-}
-
-void print_vec(vector<string> scores) {
-    cout << scores[0];
-    for (int i = 1; i < scores.size(); ++i) {
-        cout << " " << scores[i];
-    }
-    cout << endl;
 }
 
 int main() {
@@ -43,9 +36,21 @@ int main() {
         scores_vec.clear();
     }
 
+
+    map<float, vector<string>> highest_scores;
+    int rank = 1;
     for (auto const& x : scores_map) {
-        cout << x.first << ": ";
-        cout << sort_erase(x.second) << endl;
+        highest_scores[highest(x.second)].push_back(x.first);
+    }
+    for (auto x : highest_scores) {
+        sort(x.second.begin(), x.second.end(), greater<string>());
+    }
+    cout << "\nMax Score Rankings: " << endl;
+    for(auto it = highest_scores.rbegin(); it != highest_scores.rend(); ++it) {
+        for (auto name: it->second) {
+            cout << rank << ". " << name << " " << it->first << endl;
+            ++rank;
+        }
     }
     
 }
