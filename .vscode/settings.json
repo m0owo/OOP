@@ -62,6 +62,9 @@
         "concepts": "cpp",
         "random": "cpp",
         "iomanip": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "iterator": "cpp",
+        "memory_resource": "cpp",
+        "list": "cpp"
     }
 }
