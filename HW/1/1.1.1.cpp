@@ -73,6 +73,5 @@ int main() {
 
     std::cout << "*" << filler_spaces << "*" << filler_spaces << "*" << std::endl;
     std::cout << full_border << std::endl;
-
 }
 
