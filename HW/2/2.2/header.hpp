@@ -1,10 +1,10 @@
 #ifndef HEADER_HPP 
 #define HEADER_HPP
 
-#include <iostream>
 #include <string>
-#include <sstream>
 #include <vector>
+#include <iostream>
+#include <sstream>
 #include <map>
 #include <algorithm>
 using namespace std;

@@ -1,4 +1,10 @@
 #include "header.hpp"
+#include <iostream>
+#include <cmath>
+#include <vector>
+#include <fstream>
+#include <string>
+#include "random.hpp"
 
 double random_n() 
 {
@@ -9,7 +15,8 @@ double random_n()
     return a;
 }
 
-bool in_circle(float x, float y, float cx = 250, float cy = 250)
+bool in_circle(float x, float y)
 {
-    return (sqrt(pow(x - cx, 2) + pow(y - cy, 2)) <= 250);
+    int c = 250;
+    return (sqrt(pow(x - c, 2) + pow(y - c, 2)) <= 250);
 }

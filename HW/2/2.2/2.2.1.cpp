@@ -1,22 +1,4 @@
-// #include "header.hpp"
-
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <vector>
-#include <map>
-#include <algorithm>
-using namespace std;
-
-float highest(vector<string> scores) {
-    float highest = stof(scores[0]);
-    for (string score: scores) {
-        if (stof(score) > highest) {
-            highest = stof(score);
-        }
-    }
-    return highest;
-}
+#include "header.hpp"
 
 int main() {
     vector<string> scores_vec;

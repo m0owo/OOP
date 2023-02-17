@@ -1,21 +1,4 @@
-// #include "header.hpp"
-
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <vector>
-#include <map>
-#include <algorithm>
-
-using namespace std;
-
-float average(vector<string> scores) {
-    float sum = 0;
-    for (string score: scores) {
-        sum += stof(score);
-    }
-    return sum/scores.size();
-}
+#include "header.hpp"
 
 int main() {
     vector<string> scores_vec;

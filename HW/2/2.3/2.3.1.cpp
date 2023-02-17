@@ -1,25 +1,9 @@
-// #include "header.hpp"
-
+#include "header.hpp"
 #include <iostream>
-#include "random.hpp"
 #include <cmath>
 #include <vector>
 #include <fstream>
 #include <string>
-
-double random_n() 
-{
-    Rand_double rnd{0, 500};
-    std::random_device rd;
-    rnd.seed(rd());
-    float a = rnd();
-    return a;
-}
-
-bool in_circle(float x, float y, float cx = 250, float cy = 250)
-{
-    return (sqrt(pow(x - cx, 2) + pow(y - cy, 2)) <= 250);
-}
 
 int main() 
 {
@@ -30,7 +14,14 @@ int main()
     std::vector<std::string> lines;
     std::cout << "Number of Points: ";
     std::cin >> n;
-    std::ifstream infile("2.3.svg");
+    //n = 100;
+    std::ifstream infile("../2.3/2.3.svg");
+
+    if (!infile) {
+        std::cout << "Unable to read file!";
+        return 1;
+    }
+
     while (std::getline(infile, line))
     {
         lines.push_back(line);
@@ -39,7 +30,7 @@ int main()
 
     std::ofstream circle_file;
     // circle_file.open("2.3.svg", std::ios::app);
-    circle_file.open("2.3.svg");
+    circle_file.open("../2.3/2.3.svg");
     for (std::string line: lines)
     {
         circle_file << line << std::endl;
@@ -61,6 +52,6 @@ int main()
     circle_file << "</svg>" << std::endl;
     circle_file.close();
 
-
+    return 0;
     //<circle cx="250" cy="250" r="10" fill="#00FFFF" />
 }
