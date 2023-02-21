@@ -1,0 +1,5 @@
+Red *Green* Blue Cyan *Black* White
+(*Green*, Red), (*Green*, Blue),
+(*Green*, Cyan), (*Green*, White),
+(*Black*, Red), (*Black*, Blue),
+(*Black*, Cyan), (*Black*, White)

@@ -43,23 +43,26 @@ std::vector<std::string> split(std::string str, char delim) {
     return splitted;
 }
 
-//calculating avg
-float calc_avg(std::vector<std::string> data) {
-    float avg;
-    for (int i = 0; i < data.size(); ++i) {
-        float x = ::atof(data[i].c_str());
-        avg += x;
-    }
-    avg /= data.size();
-    return avg;
-}
-
 void print_vec(std::vector<float> vec) {
     std::cout << vec[0];
     for(int i = 1; i < vec.size(); ++i) {
         std::cout << " " << vec[i];
     }
     std::cout << std::endl;
+}
+
+std::vector<std::vector<float>> calc_cart_prod(std::vector<std::vector<std::string>> vec) {
+    std::vector<std::vector<float>> prod;
+    std::vector<std::string> prod;
+    for (int i = 0; i < vec.size(); ++i) {
+        for (int j = 0; j < vec[i].size(); ++j) {
+            prod.push_back(strof(vec[i][j]));
+            prod.push_back(my_group.without[][j]);
+            pairs.push_back(pair);
+            pair.clear();
+        }
+    }
+    return pairs;
 }
 
 //write output to file
@@ -74,12 +77,9 @@ void write_file(std::string file_name, std::vector<float> output) {
 int main() {
     std::vector<std::string> input_data = read_file("../exampledata.txt");
     std::vector<std::vector<std::string>> split_data;
-    std::vector<float> averages;
     for (std::string s: input_data) {
         split_data.push_back(split(s, ' '));
     }
-    for (int i = 0; i < split_data.size(); ++i) {
-        averages.push_back(calc_avg(split_data[i]));
-    }
-    write_file("../exampledata.txt", averages);
+
+    //write_file("../exampledata.txt", );
 }
