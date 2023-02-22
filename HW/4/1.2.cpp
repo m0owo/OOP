@@ -15,6 +15,7 @@ int main() {
         while (getline(ss, tmp, ' ')) {
             input.push_back(tmp);
         }
+
         if (input[0] == "set") {
             registers[input[1]] = stof(input[2]);
         }
@@ -24,6 +25,24 @@ int main() {
             }
             else {
                 std::cout << input[1] << ": " << registers[input[1]] << std::endl;
+            }
+        }
+        else if (input[0] == "subtract") {
+            std::cout << input[1] << " - " << input[2] << ": ";
+            if(!registers[input[1]] || !registers[input[2]]) {
+                std::cout << "<N/A>" << std::endl;
+            }
+            else {
+                std::cout << (registers[input[1]] - registers[input[2]]) << std::endl;
+            }
+        }
+        else if (input[0] == "add") {
+            std::cout << input[1] << " + " << input[2] << ": ";
+            if(!(registers[input[1]] && registers[input[2]])) {
+                std::cout << "<N/A>" << std::endl;
+            }
+            else {
+                std::cout << (registers[input[1]] + registers[input[2]]) << std::endl;
             }
         }
         else {
